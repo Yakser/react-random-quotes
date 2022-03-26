@@ -8,7 +8,7 @@ body,
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: #171717;
 }
 
 a,
@@ -16,28 +16,29 @@ a:hover,
 a:focus,
 a:visited {
     text-decoration: none;
-    color: #282c34;
+    color: #171717;
 }
 
 .wrapper {
-    background-color: #282c34;
+    background-color: #F5F5F5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 #quote-box {
     max-width: 600px;
-    border: 2px solid #61dafb;
+    width: 90vw;
+    border: 2px solid #DEDEDE;
     padding: 20px;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
 }
 
 #text {
@@ -61,14 +62,42 @@ a:visited {
 .button {
     outline: none;
     border: none;
-    border-radius: 1rem;
+    border-radius: 100rem;
     padding: 8px 20px;
-    background-color: #61dafb;
+    background-color: #3B49DF;
     cursor: pointer;
     font-size: .8rem;
-    color: #282c34;
+    color: #F9F9F9;
+    white-space: nowrap;
+    transition: .2s ease-out;
+    &:not(:last-child) {
+        margin-inline-end: 10px;
+    }
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        color: #F9F9F9;
+        background-color: #2F39B2;
+    }
 }
 
 .button#new-quote {
     margin-inline-start: auto;
+}
+
+a.author {
+    display: inline-block;
+    font-size: .8rem;
+    color: #DDDDDD;
+    margin-block-start: 5px;
+}
+
+@media screen and (max-width: 325px) {
+    .button :not(:last-child) {
+        margin-inline-end: 5px;
+    }
+    .button {
+        font-size: .7rem;
+        padding: 6px 12px;
+    }
 }
